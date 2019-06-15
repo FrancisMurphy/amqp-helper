@@ -11,11 +11,11 @@
  * [1]:确认是交换机名称
  * [2]:获取交换机类型:fanout,direct
  * 目前只支持fanout与direct类型的交换机，队列的名称解析规则通过此处解析出的交换机类型来进行解析
- * <p>
+ *
  * fanout交换机的队列命名规则:
  * 单个队列的命名规则:
  * queueName
- * <p>
+ *
  * direct交换机的队列命名规则:
  * 单个队列的命名格式:
  * queueName     :     routingKeyName1   &   routingKeyName2
@@ -25,9 +25,9 @@
  * [3]第一个需要建立绑定关系的routingKeyName
  * [4]区分多个routingKey的分隔符
  * [5]第二个需要建立绑定关系的routingKeyName
- * <p>
+ *
  * e.g: queue.loan:routing.key.risk&routing.key.admin
- * <p>
+ *
  * 如单个交换机下绑定多个queue，则用","分隔
  * e.g:queueDefine1,queueDefine2,queueDefine3
  *
