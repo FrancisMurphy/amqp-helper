@@ -107,9 +107,9 @@ spring.rabbitmq.virtual-host=/
         rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());
         rabbitTemplate.setMandatory(true);
         rabbitTemplate.setConfirmCallback(
-                (correlationData, ack, cause) -> logger.biz("###CommonMqTemplate### confirmCallback->correlationData({}),ack({}),cause({})",correlationData,ack,cause));
+                (correlationData, ack, cause) -> log.debug("###CommonMqTemplate### confirmCallback->correlationData({}),ack({}),cause({})",correlationData,ack,cause));
         rabbitTemplate.setReturnCallback(
-                (message, replyCode, replyText, exchange, routingKey) -> logger.biz("###CommonMqTemplate### returnCallback-> exchange({}),route({}),replyCode({}),replyText({}),message:{}",exchange,routingKey,replyCode,replyText,message));
+                (message, replyCode, replyText, exchange, routingKey) -> log.debug("###CommonMqTemplate### returnCallback-> exchange({}),route({}),replyCode({}),replyText({}),message:{}",exchange,routingKey,replyCode,replyText,message));
         return rabbitTemplate;
     }
 ```
