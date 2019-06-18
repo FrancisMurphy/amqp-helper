@@ -37,10 +37,10 @@
 
 ### 使用方式：
 #### Step1
-在您的工程中加上对com.frank.amqp,helper的注解扫描  
+在您的工程中加上对com.frank.amqp.helper的注解扫描  
 比如：  
 ```java
-@ComponentScan(basePackages = {"com.frank.amqp,helper","your base package"})  
+@ComponentScan(basePackages = {"com.frank.amqp.helper","your base package"})  
 @SpringBootApplication  
 public class AmqpApplication {  
     public static void main(String[] args) {  
