@@ -45,7 +45,7 @@ public class CommonMqParser
         String[] exchangeMetaNames = exchangeName.split("\\.");
 
         if (exchangeMetaNames.length < 3
-                || !exchangeMetaNames[0].equals("exchange")
+                || !"exchange".equals(exchangeMetaNames[0])
                 || !CommonMqParser
                 .isExchangeTypeValid(exchangeMetaNames[1])
                 || null == queueDefineMap

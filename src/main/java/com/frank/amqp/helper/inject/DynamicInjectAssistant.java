@@ -24,15 +24,6 @@ public class DynamicInjectAssistant implements InitializingBean
 {
     private DefaultListableBeanFactory beanFactory;
 
-    private ApplicationContextKeeper applicationContextKeeper;
-
-    @Autowired
-    public DynamicInjectAssistant(
-            ApplicationContextKeeper applicationContextKeeper)
-    {
-        this.applicationContextKeeper = applicationContextKeeper;
-    }
-
     @Override
     public void afterPropertiesSet() throws Exception
     {
