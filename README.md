@@ -1,6 +1,9 @@
 # amqp-helper
 一个动态初始化amqp配置的小工具,为降低用于对交换机、队列初始化绑定初始化大量的配置代码，此小工具会基于一定配置规则对amqp的交换机、队列进行动态绑定并且注册；
 
+##更新状态
+已支持springboot spi机制，客户端对amqp相关bean的注入无感知
+
 ### 解析规则
 ```java
 /**
@@ -36,20 +39,8 @@
 ```
 
 ### 使用方式：
-#### Step1
-在您的工程中加上对com.frank.amqp.helper的注解扫描  
-比如：  
-```java
-@ComponentScan(basePackages = {"com.frank.amqp.helper","your base package"})  
-@SpringBootApplication  
-public class AmqpApplication {  
-    public static void main(String[] args) {  
-        SpringApplication.run(AmqpApplication.class, args);  
-    }  
-}  
-```
   
-#### Step2
+#### Step1
 实现com.frank.amqp.helper.config.ICommonMqConfig接口，将配置的交换机、队列、路由信息返回，并将实现了此接口的实现类注入到容器中；  
 比如：  
 ```java
@@ -76,7 +67,7 @@ public class CommonMqConfig implements ICommonMqConfig
 }  
 ```
 
-#### Step3
+#### Step2
 Amqp的模版可以直接通过原生注入，比如rabbitmq
 application.properties:
 ```xml
